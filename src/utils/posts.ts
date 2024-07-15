@@ -71,7 +71,7 @@ export async function getPostData(id) {
 export async function getAllPostData() {
   const fileContents = fs.readdirSync(postsDirectory, 'utf8')
 
-  const posts: any[] = []
+  const posts = []
   fileContents.forEach(async (fileName) => {
     const fullPath = path.join(postsDirectory, fileName)
     const id = fileName.replace(/\.mdx$/, '').replace(/\.md$/, '')

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 import { Project } from '@/types'
 import { ExternalLink } from 'lucide-react'
 import Card from '@/components/Card'
@@ -9,7 +10,7 @@ const question =
 
 const answer = `As an AI assistant with knowledge up to July 2024, I can only share his work up to that time. Here are some interesting projects from Michael.`
 
-const projects: any[] = [
+const projects = [
   {
     title: 'SurrealDB',
     description:
@@ -319,7 +320,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
       <Card classes="project-card">
         <div className="project-header">
           {logo && (
-            <img src={logo} alt={`${title} logo`} className="project-logo" />
+            <Image src={logo} alt={`${title} logo`} className="project-logo" />
           )}
           <h3 className="project-title">{title}</h3>
         </div>

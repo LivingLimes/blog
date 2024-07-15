@@ -5,19 +5,19 @@ import React from 'react'
 
 const HomePage: React.FC = () => (
   <Layout>
-    <h1>Hello! I'm Michael</h1>
+    <h1>Hello! I&#39;m Michael</h1>
     <p>
-      I've been writing code for {yearsSinceDate(new Date(2020, 0, 1))} years.
-      This is my area in the internet where I share my work on anything I'm
-      interested in.
+      I&#39;ve been writing code for {yearsSinceDate(new Date(2020, 0, 1))}{' '}
+      years. This is my area in the internet where I share my work on anything
+      I&#39;m interested in.
     </p>
-    <h2>What I'm Doing Now</h2>
+    <h2>What I&#39;m Doing Now</h2>
     <p>
       These days, most of my time is spent slinging code for{' '}
       <a href="github.com/surrealdb">SurrealDB</a>, training my dog and dabbling
-      in the creative arts. In particular, I've been enjoying building stuff
-      with lego and improvising cool stories. I've also been thinking about how
-      to make the world a kinder place and a place where more people are
+      in the creative arts. In particular, I&#39;ve been enjoying building stuff
+      with lego and improvising cool stories. I&#39;ve also been thinking about
+      how to make the world a kinder place and a place where more people are
       comfortable to take calculated risks.
     </p>
     <p>Here are some of my links:</p>
