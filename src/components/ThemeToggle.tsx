@@ -1,4 +1,4 @@
-import useTheme from "../utils/hooks/useTheme"
+import useTheme from '../utils/hooks/useTheme'
 
 const ThemeToggle: React.FC = () => {
   const { isDarkMode, toggleTheme } = useTheme()
@@ -6,9 +6,9 @@ const ThemeToggle: React.FC = () => {
     <button
       onClick={toggleTheme}
       className="theme-toggle"
-      aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+      aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      {isDarkMode ? "☀️" : "🌙"}
+      {isDarkMode ? '☀️' : '🌙'}
       <style jsx>{`
         .theme-toggle {
           background: none;

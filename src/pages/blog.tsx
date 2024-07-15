@@ -1,7 +1,7 @@
-import React from "react"
-import { getAllPostData } from "@/utils/posts"
-import Layout from "@/components/Layout"
-import Link from "next/link"
+import React from 'react'
+import { getAllPostData } from '@/utils/posts'
+import Layout from '@/components/Layout'
+import Link from 'next/link'
 
 const BlogPostPage = ({ postData }) => {
   return (
@@ -17,14 +17,14 @@ const BlogPostPage = ({ postData }) => {
               )
               .map((post) => (
                 <li key={post.id}>
-                    {/* Not sure why I need to use legacy behaviour */}
+                  {/* Not sure why I need to use legacy behaviour */}
                   <Link href={`/blog/${post.id}`} legacyBehavior>
                     <a className="post-link">
                       <span className="post-title">{post.title}</span>
                       <span className="post-date">
-                        {new Date(post.date).toLocaleDateString("en-US", {
-                          year: "numeric",
-                          month: "long",
+                        {new Date(post.date).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'long',
                         })}
                       </span>
                     </a>

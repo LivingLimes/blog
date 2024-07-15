@@ -1,44 +1,44 @@
-import React, { useState, useEffect, useRef } from "react"
-import { Project } from "@/types"
-import { ExternalLink } from "lucide-react"
-import Card from "@/components/Card"
-import Layout from "@/components/Layout"
+import React, { useState, useEffect, useRef } from 'react'
+import { Project } from '@/types'
+import { ExternalLink } from 'lucide-react'
+import Card from '@/components/Card'
+import Layout from '@/components/Layout'
 
 const question =
-  "What are some interesting projects that Michael has been working on or is working on? Include any information on each project that will help me better understand his work."
+  'What are some interesting projects that Michael has been working on or is working on? Include any information on each project that will help me better understand his work.'
 
 const answer = `As an AI assistant with knowledge up to July 2024, I can only share his work up to that time. Here are some interesting projects from Michael.`
 
 const projects: any[] = [
   {
-    title: "SurrealDB",
+    title: 'SurrealDB',
     description:
-      "My code contributions to an open source distributed multi model database.",
+      'My code contributions to an open source distributed multi model database.',
     // "logo": "",
-    source: "https://github.com/surrealdb/surrealdb",
+    source: 'https://github.com/surrealdb/surrealdb',
   },
   {
-    title: "m.com",
-    description: "The source of this website.",
-    source: "https://github.com/",
+    title: 'm.com',
+    description: 'The source of this website.',
+    source: 'https://github.com/',
   },
   {
-    title: "Celebration board APIs",
+    title: 'Celebration board APIs',
     description:
       "A set of APIs for a forum application that allows users to share moments of joy in their lives. This is unfinished because I'm unsure if people would use it over a forum like Reddit.",
-    source: "https://github.com/",
+    source: 'https://github.com/',
   },
 ]
 
 const ProjectsPage: React.FC = () => {
-  const [text, setText] = useState("")
+  const [text, setText] = useState('')
 
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const [isTypingComplete, setIsTypingComplete] = useState(false)
   const [messages, setMessages] = useState<
-    { type: "user" | "bot"; content: string }[]
+    { type: 'user' | 'bot'; content: string }[]
   >([])
-  const [botResponse, setBotResponse] = useState("")
+  const [botResponse, setBotResponse] = useState('')
   const [loadedProjects, setLoadedProjects] = useState<Project[]>([])
   const [isBotResponding, setIsBotResponding] = useState(false)
   const [isLimitReached, setIsLimitReached] = useState(false)
@@ -60,19 +60,19 @@ const ProjectsPage: React.FC = () => {
 
   useEffect(() => {
     if (textareaRef.current) {
-      textareaRef.current.style.height = "auto"
+      textareaRef.current.style.height = 'auto'
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`
     }
   }, [text])
 
   const simulateButtonClick = () => {
-    const button = document.querySelector(".button")
+    const button = document.querySelector('.button')
     if (button) {
-      button.classList.add("clicked")
+      button.classList.add('clicked')
       setTimeout(() => {
-        button.classList.remove("clicked")
-        setMessages([...messages, { type: "user", content: text }])
-        setText("")
+        button.classList.remove('clicked')
+        setMessages([...messages, { type: 'user', content: text }])
+        setText('')
         setTimeout(() => {
           setIsBotResponding(true)
         }, 600)
@@ -106,12 +106,15 @@ const ProjectsPage: React.FC = () => {
 
   const loadProjectsSequentially = () => {
     projects.forEach((project, index) => {
-      setTimeout(() => {
-        setLoadedProjects((prev) => [...prev, project])
-        if (index === projects.length - 1) {
-          setIsLimitReached(true)
-        }
-      }, (index + 1) * 2000)
+      setTimeout(
+        () => {
+          setLoadedProjects((prev) => [...prev, project])
+          if (index === projects.length - 1) {
+            setIsLimitReached(true)
+          }
+        },
+        (index + 1) * 2000
+      )
     })
   }
 
@@ -128,7 +131,7 @@ const ProjectsPage: React.FC = () => {
                 key={index}
                 className={`message-card ${message.type}-message`}
               >
-                {message.type === "user" && (
+                {message.type === 'user' && (
                   <div className="user-avatar">You</div>
                 )}
                 <p>{message.content}</p>
@@ -157,8 +160,8 @@ const ProjectsPage: React.FC = () => {
             disabled={isLimitReached}
             placeholder={
               isLimitReached
-                ? "You have reached your daily limit of one request on this page."
-                : ""
+                ? 'You have reached your daily limit of one request on this page.'
+                : ''
             }
           />
           <button className="button" disabled={isLimitReached}>
@@ -227,7 +230,9 @@ const ProjectsPage: React.FC = () => {
           padding: 10px 16px;
           font-size: 14px;
           cursor: pointer;
-          transition: background-color 0.2s, transform 0.1s;
+          transition:
+            background-color 0.2s,
+            transform 0.1s;
           white-space: nowrap;
         }
         .button:hover:not(:disabled) {

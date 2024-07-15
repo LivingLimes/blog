@@ -1,6 +1,6 @@
-import { createContext } from 'react';
-import { ThemeContextType } from '@/types';
+import { createContext } from 'react'
+import { ThemeContextType } from '@/types'
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export default ThemeContext

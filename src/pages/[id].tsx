@@ -1,5 +1,5 @@
-import Layout from "@/components/Layout"
-import { getRootPagesData, getAllRootPagesIds } from "../utils/rootPages"
+import Layout from '@/components/Layout'
+import { getRootPagesData, getAllRootPagesIds } from '../utils/rootPages'
 
 export default function RootPages({ postData }) {
   return (

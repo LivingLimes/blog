@@ -5,9 +5,9 @@ module.exports = {
   webpack5: true,
   webpack: (config) => {
     config.resolve.fallback = { fs: false, path: false }
-    config.resolve.alias['@'] = path.join(__dirname, 'src');
+    config.resolve.alias['@'] = path.join(__dirname, 'src')
 
     return config
   },
-  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 }

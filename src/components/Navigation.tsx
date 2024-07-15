@@ -1,20 +1,20 @@
-import Link from "next/link"
-import { useRouter } from "next/router"
-import ThemeToggle from "./ThemeToggle"
-import React from "react"
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import ThemeToggle from './ThemeToggle'
+import React from 'react'
 
 const links = [
   {
-    to: "/blog",
-    name: "Blog",
+    to: '/blog',
+    name: 'Blog',
   },
   {
-    to: "/projects",
-    name: "Projects",
+    to: '/projects',
+    name: 'Projects',
   },
   {
-    to: "/connect",
-    name: "Connect",
+    to: '/connect',
+    name: 'Connect',
   },
 ]
 
@@ -30,12 +30,10 @@ const Navigation = () => {
           </Link>
           <div className="nav-links">
             {links.map(({ to, name }, index) => (
-              <Link 
-                key={index} 
-                href={to} 
-                legacyBehavior
-              >
-                <a className={`nav-link ${router.pathname === to ? "active" : ""}`}>
+              <Link key={index} href={to} legacyBehavior>
+                <a
+                  className={`nav-link ${router.pathname === to ? 'active' : ''}`}
+                >
                   {name}
                 </a>
               </Link>

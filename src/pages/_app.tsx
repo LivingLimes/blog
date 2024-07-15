@@ -1,5 +1,5 @@
-import React from "react"
-import ThemeProvider from "@/utils/contexts/ThemeProvider"
+import React from 'react'
+import ThemeProvider from '@/utils/contexts/ThemeProvider'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -22,10 +22,9 @@ const GlobalStyles = () => (
       --light-grey: #4f4f4f;
       --page-width: 800px;
 
-      --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       --box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
-      0 4px 8px 0 rgba(0, 0, 0, 0.1),
-      0 8px 16px 0 rgba(0, 0, 0, 0.1);
+        0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 8px 16px 0 rgba(0, 0, 0, 0.1);
 
       --border-radius-4: 4px;
       --border-radius-8: 8px;
@@ -47,7 +46,8 @@ const GlobalStyles = () => (
       font-family: var(--font-family);
       background-color: var(--bg-primary);
       color: var(--text-secondary);
-      transition: background-color var(--transition-speed) ease,
+      transition:
+        background-color var(--transition-speed) ease,
         color var(--transition-speed) ease;
     }
 
@@ -61,8 +61,8 @@ const GlobalStyles = () => (
       --nav-text: #ffffff;
 
       --box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.05),
-      0 4px 8px 0 rgba(255, 255, 255, 0.05),
-      0 8px 16px 0 rgba(255, 255, 255, 0.05);
+        0 4px 8px 0 rgba(255, 255, 255, 0.05),
+        0 8px 16px 0 rgba(255, 255, 255, 0.05);
     }
 
     main {
@@ -132,7 +132,9 @@ const GlobalStyles = () => (
       border-radius: var(--border-radius-4);
       resize: none;
       overflow: hidden;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
       background-color: var(--bg-secondary);
       color: var(--text-secondary);
     }

@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout"
+import Layout from '@/components/Layout'
 import { getAllPostIds, getPostData } from '@/utils/posts'
 
 export default function Post({ postData }) {

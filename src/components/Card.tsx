@@ -1,9 +1,9 @@
-import React from "react"
+import React from 'react'
 
-const Card = ({ children, classes = "" }) => {
+const Card = ({ children, classes = '' }) => {
   return (
     <>
-      <div className={`card${classes !== "" ? ` ${classes}` : ""}`}>
+      <div className={`card${classes !== '' ? ` ${classes}` : ''}`}>
         {children}
       </div>
       <style jsx>{`
