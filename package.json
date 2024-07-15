@@ -4,7 +4,9 @@
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
-    "vercel-install": "./vercel-submodule-update.sh && npm run build"
+    "vercel-install": "./vercel-submodule-update.sh && npm run build",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
@@ -24,6 +26,14 @@
   },
   "devDependencies": {
     "@types/node": "20.14.10",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.5",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.34.4",
+    "prettier": "^3.3.3",
     "typescript": "5.5.3"
   }
 }
