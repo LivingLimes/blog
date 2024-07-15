@@ -1,6 +1,6 @@
 import React from "react"
-import { getAllPostData } from "../utils/posts"
-import Layout from "../components/Layout"
+import { getAllPostData } from "@/utils/posts"
+import Layout from "@/components/Layout"
 import Link from "next/link"
 
 const BlogPostPage = ({ postData }) => {

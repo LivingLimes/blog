@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react"
-import { Project } from "../types"
+import { Project } from "@/types"
 import { ExternalLink } from "lucide-react"
-import Card from "../components/Card"
-import Layout from "../components/Layout"
+import Card from "@/components/Card"
+import Layout from "@/components/Layout"
 
 const question =
   "What are some interesting projects that Michael has been working on or is working on? Include any information on each project that will help me better understand his work."

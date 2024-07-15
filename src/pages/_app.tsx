@@ -1,5 +1,5 @@
 import React from "react"
-import ThemeProvider from "../utils/contexts/ThemeProvider"
+import ThemeProvider from "@/utils/contexts/ThemeProvider"
 
 export default function App({ Component, pageProps }) {
   return (

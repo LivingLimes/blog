@@ -1,7 +1,4 @@
-import Layout from "../components/Layout"
-import { getAllPostIds, getPostData } from "../utils/posts"
-import Head from "next/head"
-import convertDateStringToDate from "../components/Date"
+import Layout from "@/components/Layout"
 import { getRootPagesData, getAllRootPagesIds } from "../utils/rootPages"
 
 export default function RootPages({ postData }) {
@@ -9,7 +6,6 @@ export default function RootPages({ postData }) {
     <Layout>
       <h1>{postData.title}</h1>
       <article>
-        <div>{/* <Date dateString={postData?.date} /> */}</div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>

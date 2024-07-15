@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { yearsSinceDate } from '../utils/maths';
-import Layout from '../components/Layout';
+import { yearsSinceDate } from '@/utils/maths';
+import Layout from '@/components/Layout';
 import React from 'react';
 
 const HomePage: React.FC = () => (
