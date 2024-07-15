@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-const postsDirectory = path.join(process.cwd(), 'posts');
+const postsDirectory = path.join(process.cwd(), 'content', 'posts');
 
 export function getSortedPostsData() {
   // Get file names under /posts
@@ -66,4 +66,34 @@ export async function getPostData(id) {
     contentHtml,
     ...matterResult.data,
   };
+}
+
+export async function getAllPostData() {
+  const fileContents = fs.readdirSync(postsDirectory, 'utf8');
+
+  const posts: any[] = []
+  fileContents.forEach(async (fileName) => {
+    const fullPath = path.join(postsDirectory, fileName);
+    const id = fileName.replace(/\.mdx$/, '').replace(/\.md$/, '');
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    
+    // Use gray-matter to parse the post metadata section
+    const matterResult = matter(fileContents);
+  
+    // Use remark to convert markdown into HTML string
+    // TODO: Update to do async processing
+    const processedContent = await remark()
+      .use(html)
+      .process(matterResult.content);
+    const contentHtml = processedContent.toString();
+
+    posts.push({
+      id,
+      contentHtml,
+      ...matterResult.data,
+    })
+  })
+
+  console.log({posts})
+  return posts
 }

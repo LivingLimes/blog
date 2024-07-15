@@ -1,0 +1,3 @@
+[submodule "content"]
+	path = content
+	url = git@github.com:LivingLimes/Blog-Content.git
