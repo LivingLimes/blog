@@ -21,7 +21,6 @@ export async function getRootPagesData(id) {
     const fullPath = path.join(rootPagesDirectory, `${id}.mdx`);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
   
-    console.log({fileContents})
     const matterResult = matter(fileContents);
   
     const processedContent = await remark()

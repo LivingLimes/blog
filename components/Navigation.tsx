@@ -20,7 +20,6 @@ const links = [
 
 const Navigation = () => {
   const router = useRouter()
-  console.log(router)
 
   return (
     <>

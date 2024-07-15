@@ -94,6 +94,5 @@ export async function getAllPostData() {
     })
   })
 
-  console.log({posts})
   return posts
 }
