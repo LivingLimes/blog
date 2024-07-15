@@ -4,7 +4,7 @@
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
-    "vercel-install": "./vercel-submodule-workaround.sh && npm build"
+    "vercel-install": "./vercel-submodule-update.sh && npm build"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
