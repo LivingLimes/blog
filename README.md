@@ -6,3 +6,5 @@ TODOs:
 - Add documentation
 - Add comments
 - Understand any bits I didn't understand while building this.
+- Add linting and prettier
+- Use an src folder
