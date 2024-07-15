@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout'
-import { getAllPostIds, getPostData } from '@/utils/posts'
+import { postsDirectory } from '@/utils/constants'
+import { getAllPagesIds, getPagesData } from '@/utils/page'
 
 export default function Post({ postData }) {
   return (
@@ -13,7 +14,7 @@ export default function Post({ postData }) {
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPostIds()
+  const paths = getAllPagesIds({ directory: postsDirectory})
   return {
     paths,
     fallback: false,
@@ -21,7 +22,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id)
+  const postData = await getPagesData({id: params.id, directory: postsDirectory })
   return {
     props: {
       postData,

@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout'
-import { getRootPagesData, getAllRootPagesIds } from '../utils/rootPages'
+import { getAllPagesIds, getPagesData } from '@/utils/page'
+import { rootPagesDirectory } from '@/utils/constants'
 
 export default function RootPages({ postData }) {
   return (
@@ -13,7 +14,7 @@ export default function RootPages({ postData }) {
 }
 
 export async function getStaticPaths() {
-  const paths = getAllRootPagesIds()
+  const paths = getAllPagesIds({ directory: rootPagesDirectory})
   return {
     paths,
     fallback: false,
@@ -21,7 +22,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getRootPagesData(params.id)
+  const postData = await getPagesData({id : params.id, directory: rootPagesDirectory })
   return {
     props: {
       postData,

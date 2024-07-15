@@ -1,7 +1,8 @@
 import React from 'react'
-import { getAllPostData } from '@/utils/posts'
+import { getSortedPageData } from '@/utils/page'
 import Layout from '@/components/Layout'
 import Link from 'next/link'
+import { postsDirectory } from '@/utils/constants'
 
 const BlogPostPage = ({ postData }) => {
   return (
@@ -11,10 +12,6 @@ const BlogPostPage = ({ postData }) => {
         <section>
           <ul className="posts">
             {postData
-              .sort(
-                (a, b) =>
-                  new Date(b.date).getTime() - new Date(a.date).getTime()
-              )
               .map((post) => (
                 <li key={post.id}>
                   {/* Not sure why I need to use legacy behaviour */}
@@ -79,7 +76,7 @@ const BlogPostPage = ({ postData }) => {
 }
 
 export async function getStaticProps() {
-  const postData = await getAllPostData()
+  const postData = await getSortedPageData({ directory: postsDirectory })
   return {
     props: {
       postData,
