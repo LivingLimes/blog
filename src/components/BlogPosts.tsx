@@ -7,7 +7,7 @@ const BlogPosts = ({ posts }) => {
         {posts.map((post) => (
           <li key={post.id}>
             {/* Not sure why I need to use legacy behaviour */}
-            <Link href={`/blog/${post.id}`} legacyBehavior>
+            <Link href={`/posts/${post.id}`} legacyBehavior>
               <a className="post-link">
                 <span className="post-title">{post.title}</span>
                 <span className="post-date">
