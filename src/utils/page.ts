@@ -20,7 +20,7 @@ export function getSortedPageData({ directory }) {
   const fileNames = fs.readdirSync(directory)
   const allPostsData = fileNames.map((fileName) => {
     // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, '')
+    const id = fileName.replace(/\.mdx$/, '')
 
     // Read markdown file as string
     const fullPath = path.join(directory, fileName)
