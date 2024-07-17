@@ -4,7 +4,7 @@
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
-    "vercel-install": "./vercel-submodule-update.sh && npm run build",
+    "vercel-install": "./deploy/vercel-submodule-update.sh && npm run build",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
