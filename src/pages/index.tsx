@@ -20,46 +20,51 @@ const HomePage: React.FC = ({ postData }) => {
       <h2>What I&#39;m Doing Now</h2>
       <p>
         These days, most of my time is spent slinging code for{' '}
-        <a href="github.com/surrealdb">SurrealDB</a>, training my dog and
-        dabbling in the creative arts. In particular, I&#39;ve been enjoying
-        building stuff with lego and improvising cool stories. I&#39;ve also
-        been thinking about how to make the world a kinder place and a place
-        where more people are comfortable to take calculated risks.
+        <a href="https://github.com/surrealdb/surrealdb">SurrealDB</a>, training
+        my dog and dabbling in the creative arts. In particular, I&#39;ve been
+        enjoying building stuff with lego and improvising cool stories. I&#39;ve
+        also been thinking about how to make the world a kinder place and a
+        place where more people are comfortable to take calculated risks.
       </p>
-      <p>Here are some of my links:</p>
-      <ul>
-        <li>
-          <Link href="/blog">Blog</Link>
-        </li>
-        <li>
-          <Link href="/projects">Projects</Link>
-        </li>
-        <li>
-          <a
-            href="https://linkedin.com/in/tran-michael"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://github.com/livinglimes"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-        </li>
-      </ul>
-
-      <h2>Blog</h2>
-      <BlogPosts posts={postData} />
 
       <h2>Projects</h2>
       <section>
         <Projects projects={projects} />
+      </section>
+
+      <h2>Blog</h2>
+      <section>
+        <BlogPosts posts={postData} />
+      </section>
+
+      <section>
+        <h2>My Links</h2>
+        <ul>
+          <li>
+            <a
+              href="https://github.com/livinglimes"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com/in/tran-michael"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <Link href="/projects">Projects</Link>
+          </li>
+          <li>
+            <Link href="/blog">Blog</Link>
+          </li>
+        </ul>
       </section>
     </Layout>
   )
