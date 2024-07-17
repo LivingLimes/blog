@@ -49,7 +49,7 @@ const BlogPosts = ({ posts }) => {
           color: inherit;
           opacity: 0.9;
         }
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .post-link {
             flex-direction: column;
             align-items: flex-start;

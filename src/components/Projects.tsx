@@ -15,9 +15,14 @@ const Projects = ({ projects }) => {
       <style jsx>{`
         .projects-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: 1fr;
           gap: 1rem;
           margin-top: 1rem;
+        }
+        @media (min-width: 768px) {
+          .projects-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
         }
       `}</style>
     </>

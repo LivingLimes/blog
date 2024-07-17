@@ -81,7 +81,7 @@ const Navigation = () => {
           border-bottom: 2px solid var(--accent-primary);
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .nav-links {
             gap: 0.25rem;
           }

@@ -23,7 +23,7 @@ const ThemeToggle: React.FC = () => {
           background-color: var(--accent-primary);
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .theme-toggle {
             margin: 0.25rem 0 0.25rem 0.25rem;
           }
