@@ -14,7 +14,7 @@ export default function Post({ postData }) {
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPagesIds({ directory: postsDirectory})
+  const paths = getAllPagesIds({ directory: postsDirectory })
   return {
     paths,
     fallback: false,
@@ -22,7 +22,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getPagesData({id: params.id, directory: postsDirectory })
+  const postData = await getPagesData({
+    id: params.id,
+    directory: postsDirectory,
+  })
   return {
     props: {
       postData,

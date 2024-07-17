@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { yearsSinceDate } from '@/utils/maths'
 import Layout from '@/components/Layout'
-import React, { useState } from 'react'
+import React from 'react'
 import Projects from '@/components/Projects'
 import { projects } from '@/data/projects'
 import BlogPosts from '@/components/BlogPosts'

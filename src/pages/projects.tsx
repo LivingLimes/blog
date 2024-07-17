@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Project } from '@/types'
-import {projects} from '@/data/projects'
+import { projects } from '@/data/projects'
 import Layout from '@/components/Layout'
 import Projects from '@/components/Projects'
 
@@ -121,7 +121,7 @@ const ProjectsPage: React.FC = () => {
             {botResponse && (
               <div className="message-card bot-message">
                 <p>{botResponse}</p>
-                 <Projects projects={loadedProjects} />
+                <Projects projects={loadedProjects} />
               </div>
             )}
           </div>
