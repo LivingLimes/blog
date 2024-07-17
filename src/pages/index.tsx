@@ -20,11 +20,18 @@ const HomePage: React.FC = ({ postData }) => {
       <h2>What I&#39;m Doing Now</h2>
       <p>
         These days, most of my time is spent slinging code for{' '}
-        <a href="https://github.com/surrealdb/surrealdb">SurrealDB</a>, training
-        my dog and dabbling in the creative arts. In particular, I&#39;ve been
-        enjoying building stuff with lego and improvising cool stories. I&#39;ve
-        also been thinking about how to make the world a kinder place and a
-        place where more people are comfortable to take calculated risks.
+        <a
+          href="https://github.com/surrealdb/surrealdb"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          SurrealDB
+        </a>
+        , training my dog and dabbling in the creative arts. In particular,
+        I&#39;ve been enjoying building stuff with lego and improvising cool
+        stories. I&#39;ve also been thinking about how to make the world a
+        kinder place and a place where more people are comfortable to take
+        calculated risks.
       </p>
 
       <h2>Projects</h2>
