@@ -32,7 +32,7 @@ const Navigation = () => {
             {links.map(({ to, name }, index) => (
               <Link key={index} href={to} legacyBehavior>
                 <a
-                  className={`nav-link ${router.pathname === to ? 'active' : ''}`}
+                  className={`nav-link ${router.asPath === to ? 'active' : ''}`}
                 >
                   {name}
                 </a>
