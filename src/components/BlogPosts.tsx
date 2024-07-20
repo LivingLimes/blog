@@ -3,61 +3,53 @@ import Link from 'next/link'
 const BlogPosts = ({ posts }) => {
   return (
     <>
-      <ul className="posts">
+      <div className="posts" role="list">
         {posts.map((post) => (
-          <li key={post.id}>
-            {/* Not sure why I need to use legacy behaviour */}
-            <Link href={`/posts/${post.id}`} legacyBehavior>
+          <article key={post.id} className="post" role="listitem">
+            <Link href={`/posts/${post.id}`} key={post.id} legacyBehavior>
               <a className="post-link">
-                <span className="post-title">{post.title}</span>
-                <span className="post-date">
-                  {new Date(post.date).toLocaleDateString('en-US', {
+                <h3 className="post-title">{post.title}</h3>
+                <p className="post-caption">{post.caption}</p>
+                <time className="post-date" dateTime={post.date}>
+                  {new Date(post.date).toLocaleDateString('en-AU', {
                     year: 'numeric',
                     month: 'long',
+                    day: 'numeric',
                   })}
-                </span>
+                </time>
               </a>
             </Link>
-          </li>
+          </article>
         ))}
-      </ul>
+      </div>
       <style jsx>{`
         .posts {
-          list-style-type: none;
-          padding: 0;
+          display: flex;
+          flex-direction: column;
+        }
+        .post {
+          border-top: 1px solid var(--border-grey);
+          border-bottom: 1px solid var(--border-grey);
+          padding: 1rem 0;
+        }
+        .posts + .post {
+          border-top: none;
         }
         .post-link {
           display: flex;
-          justify-content: space-between;
-          align-items: baseline;
-          text-decoration: none;
-          color: var(--accent-primary);
-          transition: all 0.3s ease;
-          padding: 10px;
-          border-radius: 4px;
-          border: 2px solid transparent;
+          flex-direction: column;
+          border-bottom: none;
+          gap: 0.25rem;
         }
-        .post-link:hover,
-        .post-link:focus {
-          background-color: var(--accent-primary);
-          color: #ffffff;
-          outline: none;
-          border-color: var(--accent-primary);
+        .post-title {
+          margin: 0;
+        }
+        .post-caption {
+          margin: 0;
         }
         .post-date {
-          font-size: 0.8rem;
-          color: inherit;
-          opacity: 0.9;
-        }
-        @media (max-width: 768px) {
-          .post-link {
-            flex-direction: column;
-            align-items: flex-start;
-          }
-          .post-date {
-            font-size: 0.8rem;
-            margin-top: 0.2rem;
-          }
+          font-size: 0.9rem;
+          color: var(--text-secondary);
         }
       `}</style>
     </>
