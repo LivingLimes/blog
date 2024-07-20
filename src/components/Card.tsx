@@ -8,9 +8,8 @@ const Card = ({ children, classes = '' }) => {
       </div>
       <style jsx>{`
         .card {
-          background-color: var(--bg-secondary);
-          border-radius: var(--border-radius-4);
-          box-shadow: var(--box-shadow);
+          border: 1px solid vaR(--text-secondary);
+          border-radius: var(--border-radius-8);
           padding: 1rem;
         }
       `}</style>

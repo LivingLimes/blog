@@ -23,34 +23,38 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className="nav-container">
-        <div className="nav-content">
+      <header className="nav-header">
+        <div className="nav-container">
           <Link href="/" legacyBehavior>
             <a className={`nav-link logo`}>MT</a>
           </Link>
-          <div className="nav-links">
-            {links.map(({ to, name }, index) => (
-              <Link key={index} href={to} legacyBehavior>
-                <a
-                  className={`nav-link ${router.asPath === to ? 'active' : ''}`}
-                >
-                  {name}
-                </a>
-              </Link>
-            ))}
-            <ThemeToggle />
-          </div>
+          <nav aria-label="main navigation">
+            <ul className="nav-links">
+              {links.map(({ to, name }, index) => (
+                <li key={index}>
+                  <Link href={to} legacyBehavior>
+                    <a
+                      className={`nav-link ${router.asPath === to ? 'active' : ''}`}
+                    >
+                      {name}
+                    </a>
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <ThemeToggle />
+              </li>
+            </ul>
+          </nav>
         </div>
-      </nav>
+      </header>
       <style jsx>{`
-        .nav-container {
+        .nav-header {
           border-bottom: 1px solid var(--bg-secondary);
-          width: 100%;
         }
 
-        .nav-content {
+        .nav-container {
           display: flex;
-          flex-direction: row;
           justify-content: space-between;
           align-items: center;
           max-width: var(--page-width);
@@ -58,22 +62,18 @@ const Navigation = () => {
           padding: 1rem 2rem;
         }
 
-        .nav-link.logo {
-          font-size: 1.5rem;
-          font-weight: bold;
-        }
-
         .nav-links {
           display: flex;
           gap: 1rem;
           align-items: center;
+          list-style: none;
+          margin: 0;
         }
 
         .nav-link {
           border-bottom: none;
           color: var(--text-primary);
           padding: 0.5rem;
-          transition: border-color 0.3s ease;
         }
 
         .nav-link:hover,
@@ -81,7 +81,15 @@ const Navigation = () => {
           border-bottom: 2px solid var(--accent-primary);
         }
 
+        .nav-link.logo {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+
         @media (max-width: 768px) {
+          .nav-container {
+            padding: 0.5rem 2rem;
+          }
           .nav-links {
             gap: 0.25rem;
           }

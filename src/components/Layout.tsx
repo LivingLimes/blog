@@ -7,16 +7,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <div className={`layout ${isDarkMode ? 'dark-mode' : ''}`}>
+      <div className={`${isDarkMode ? 'dark-mode' : ''}`}>
         <Navigation />
 
-        <main className="page">{children}</main>
+        <main>{children}</main>
       </div>
-      <style jsx>{`
-        .layout {
-          min-height: 100vh;
-        }
-      `}</style>
     </>
   )
 }
