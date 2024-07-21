@@ -28,13 +28,13 @@ const BlogPosts = ({ posts }) => {
           flex-direction: column;
         }
         .post {
-          border-top: 1px solid var(--border-grey);
           border-bottom: 1px solid var(--border-grey);
           padding: 1rem 0;
         }
-        .posts + .post {
-          border-top: none;
+        .posts > .post:first-child {
+          border-top: 1px solid var(--border-grey);
         }
+
         .post-link {
           display: flex;
           flex-direction: column;

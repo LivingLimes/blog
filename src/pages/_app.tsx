@@ -22,7 +22,7 @@ const GlobalStyles = () => (
       --light-grey: #4f4f4f;
       --page-width: 800px;
 
-      --btn-grey: #e2e2e2;
+      --btn-grey: #ececec;
 
       --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       --box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1),

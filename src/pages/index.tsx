@@ -109,12 +109,9 @@ const HomePage: React.FC = ({ postData }) => {
           color: var(--text-primary);
           border: 1px solid var(--bg-secondary);
           border-radius: var(--border-radius-8);
-          font-weight: bold;
-          font-size: 0.875rem;
         }
         .view-all:hover {
           border-color: var(--text-primary);
-          opacity: 0.85;
         }
       `}</style>
     </>

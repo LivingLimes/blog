@@ -27,17 +27,17 @@ const Projects = ({ projects }) => {
 }
 
 const ProjectCard = ({ project }) => {
-  const { logo, title, description, source, demo } = project
+  const { title, description, source, demo } = project
 
   return (
     <>
       <Card classes="project-content">
-        <header className="project-header">
+        <header>
           <h3 className="project-title">{title}</h3>
         </header>
         <p className="project-description">{description}</p>
         {(source || demo) && (
-          <footer className="project-footer">
+          <footer>
             <ProjectLinks source={source} demo={demo} />
           </footer>
         )}
@@ -47,20 +47,12 @@ const ProjectCard = ({ project }) => {
           display: flex;
         }
 
-        .project-content {
+        :global(.project-content) {
           display: flex;
           flex-direction: column;
-          height: 100%;
+          gap: 0.25rem;
         }
 
-        .project-header {
-          display: flex;
-          align-items: center;
-          margin-bottom: 0.5rem;
-        }
-        .project-logo {
-          margin-right: 1rem;
-        }
         .project-title {
           font-size: 1.25rem;
           font-weight: bold;
@@ -69,10 +61,6 @@ const ProjectCard = ({ project }) => {
         .project-description {
           margin: 0;
           flex-grow: 1;
-        }
-        .project-footer {
-          padding-top: 0.5rem;
-          border-top: 1px solid #e5e7eb;
         }
       `}</style>
     </>
