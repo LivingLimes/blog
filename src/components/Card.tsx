@@ -8,7 +8,7 @@ const Card = ({ children, classes = '' }) => {
       </div>
       <style jsx>{`
         .card {
-          border: 1px solid vaR(--text-secondary);
+          border: 1px solid var(--text-secondary);
           border-radius: var(--border-radius-8);
           padding: 1rem;
         }

@@ -16,10 +16,8 @@ const ProjectsPage: React.FC = () => {
 
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const [isTypingComplete, setIsTypingComplete] = useState(false)
-  const [messages, setMessages] = useState<
-    { type: 'user' | 'bot'; content: string }[]
-  >([])
-  const [botResponse, setBotResponse] = useState('')
+  const [userMessage, setUserMessage] = useState<string>('')
+  const [botTextMessage, setBotTextMessage] = useState<string>('')
   const [loadedProjects, setLoadedProjects] = useState<Project[]>([])
   const [isBotResponding, setIsBotResponding] = useState(false)
   const [isLimitReached, setIsLimitReached] = useState(false)
@@ -46,21 +44,6 @@ const ProjectsPage: React.FC = () => {
     }
   }, [text])
 
-  const simulateButtonClick = () => {
-    const button = document.querySelector('.button')
-    if (button) {
-      button.classList.add('clicked')
-      setTimeout(() => {
-        button.classList.remove('clicked')
-        setMessages([...messages, { type: 'user', content: text }])
-        setText('')
-        setTimeout(() => {
-          setIsBotResponding(true)
-        }, 300)
-      }, 500)
-    }
-  }
-
   useEffect(() => {
     if (isTypingComplete) {
       setTimeout(simulateButtonClick, 300)
@@ -72,7 +55,7 @@ const ProjectsPage: React.FC = () => {
       let i = 0
       const intervalId = setInterval(() => {
         if (i < answer.length) {
-          setBotResponse(answer.slice(0, i + 1))
+          setBotTextMessage(answer.slice(0, i + 1))
           i++
         } else {
           clearInterval(intervalId)
@@ -84,6 +67,24 @@ const ProjectsPage: React.FC = () => {
       return () => clearInterval(intervalId)
     }
   }, [isBotResponding])
+
+  const simulateButtonClick = () => {
+    const button = document.querySelector('.button')
+
+    if (!button) {
+      return
+    }
+
+    button.classList.add('clicked')
+    setTimeout(() => {
+      button.classList.remove('clicked')
+      setUserMessage(text)
+      setText('')
+      setTimeout(() => {
+        setIsBotResponding(true)
+      }, 300)
+    }, 500)
+  }
 
   const loadProjectsSequentially = () => {
     projects.forEach((project, index) => {
@@ -99,33 +100,26 @@ const ProjectsPage: React.FC = () => {
     })
   }
 
-  const shouldDisplayMessages = isTypingComplete && messages.length > 0
-
   return (
     <>
       <Layout>
         <h1>My Projects</h1>
-        {shouldDisplayMessages ? (
+        {isTypingComplete && userMessage && (
           <div className="message-container">
-            {messages.map((message, index) => (
-              <div
-                key={index}
-                className={`message-card ${message.type}-message`}
-              >
-                {message.type === 'user' && (
-                  <div className="user-avatar">You</div>
-                )}
-                <p>{message.content}</p>
+            {userMessage && (
+              <div className={`message-card user-message-container`}>
+                <div className="user-avatar">You</div>
+                <p className="message">{userMessage}</p>
               </div>
-            ))}
-            {botResponse && (
-              <div className="message-card bot-message">
-                <p>{botResponse}</p>
+            )}
+            {botTextMessage && (
+              <div className="message-card">
+                <p className="message bot-message">{botTextMessage}</p>
                 <Projects projects={loadedProjects} />
               </div>
             )}
           </div>
-        ) : null}
+        )}
         <div className="input-container">
           <textarea
             ref={textareaRef}
@@ -153,25 +147,25 @@ const ProjectsPage: React.FC = () => {
           flex-direction: column;
           gap: 0.5rem;
           padding-bottom: 1rem;
-          background-color: var(--bg-primary);
-          border-radius: var(--border-radius-8);
         }
         .message-card {
           border-radius: var(--border-radius-8);
           padding: 0.75rem;
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
           background-color: var(--bg-secondary);
-          color: var(--text-secondary);
         }
-        .user-message {
+        .user-message-container {
           position: relative;
           border-left: 4px solid var(--accent-secondary);
         }
-        .message-card p {
+        .message-card .message {
           margin: 0;
           font-size: 14px;
           line-height: 1.5;
           white-space: pre-wrap;
+        }
+        .message-card .bot-message {
+          margin-bottom: 0.75rem;
         }
         .user-avatar {
           position: absolute;
@@ -181,12 +175,12 @@ const ProjectsPage: React.FC = () => {
           color: var(--bg-secondary);
           border-radius: var(--border-radius-round);
           padding: 2px 8px;
-          font-size: 12px;
+          font-size: 0.75rem;
         }
         .input-container {
           display: flex;
           align-items: flex-start;
-          gap: 8px;
+          gap: 0.5rem;
         }
         @media (max-width: 768px) {
           .projects-grid {
@@ -199,21 +193,12 @@ const ProjectsPage: React.FC = () => {
           border: 1px solid var(--accent-secondary);
           border-radius: var(--border-radius-4);
           padding: 10px 16px;
-          font-size: 14px;
-          cursor: pointer;
-          transition:
-            background-color 0.2s,
-            transform 0.1s;
-          white-space: nowrap;
+          font-size: 0.8rem;
         }
         .button:hover:not(:disabled) {
           color: var(--accent-secondary);
           background-color: var(--white);
           border: 1px solid var(--accent-secondary);
-        }
-        .button:focus {
-          outline: none;
-          box-shadow: 0 0 0 2px rgba(138, 75, 175, 0.3);
         }
         .button.clicked {
           transform: scale(0.95);

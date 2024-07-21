@@ -16,11 +16,13 @@ const GlobalStyles = () => (
   <style jsx global>{`
     :root {
       --light-mauve: #7025bb;
-      --white: #f6f7f8;
+      --white: #fff;
       --black: #000;
       --light-black: #333;
       --light-grey: #4f4f4f;
       --page-width: 800px;
+
+      --btn-grey: #e2e2e2;
 
       --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       --box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
@@ -29,6 +31,8 @@ const GlobalStyles = () => (
       --border-radius-4: 4px;
       --border-radius-8: 8px;
       --border-radius-round: 50%;
+
+      --border-grey: #d4d4d4;
 
       --bg-primary: var(--white);
       --bg-secondary: #f0f0f0;
@@ -60,6 +64,8 @@ const GlobalStyles = () => (
       --accent-secondary: #b388ff;
       --nav-text: #ffffff;
 
+      --btn-grey: #323232;
+
       --box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.05),
         0 4px 8px 0 rgba(255, 255, 255, 0.05),
         0 8px 16px 0 rgba(255, 255, 255, 0.05);
@@ -90,7 +96,7 @@ const GlobalStyles = () => (
 
     h2 {
       font-size: 1.5em;
-      margin: 1.5rem 0 0.5rem 0;
+      margin: 1.5rem 0 1rem 0;
     }
 
     h3 {
@@ -102,6 +108,7 @@ const GlobalStyles = () => (
     li {
       margin-bottom: 0.25rem;
       line-height: 1.6;
+      color: var(--text-secondary);
     }
 
     ul {
