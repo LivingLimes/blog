@@ -15,33 +15,35 @@ export default function App({ Component, pageProps }) {
 const GlobalStyles = () => (
   <style jsx global>{`
     :root {
-      --light-mauve: #7025bb;
-      --white: #fff;
-      --black: #000;
-      --light-black: #333;
-      --light-grey: #4f4f4f;
-      --page-width: 800px;
-
-      --btn-grey: #ececec;
-
+      --media-query: 640px;
+      --max-page-width: 800px;
       --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      --box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
-        0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 8px 16px 0 rgba(0, 0, 0, 0.1);
 
       --border-radius-4: 4px;
       --border-radius-8: 8px;
       --border-radius-round: 50%;
 
+      --white: #f3f3f3;
+      --white-2: #e2e2e2;
+      --light-grey: #4f4f4f;
+      --light-black: #333;
+      --black: #000;
+      --light-mauve: #7025bb;
+
+      --project-link: var(--white);
+
+      --btn-grey: #e0e0e0;
+
       --border-grey: #d4d4d4;
 
       --bg-primary: var(--white);
-      --bg-secondary: #f0f0f0;
+      --bg-secondary: var(--white-2);
       --text-primary: var(--light-black);
       --text-secondary: var(--light-grey);
       --accent-primary: var(--light-mauve);
-      --accent-secondary: var(--accent-primary);
-      --nav-text: var(--white);
-      --transition-speed: 0.3s;
+
+      --btn-text-regular: var(--text-primary);
+      --btn-text-inverted: var(--white-2);
     }
 
     body {
@@ -50,9 +52,6 @@ const GlobalStyles = () => (
       font-family: var(--font-family);
       background-color: var(--bg-primary);
       color: var(--text-secondary);
-      transition:
-        background-color var(--transition-speed) ease,
-        color var(--transition-speed) ease;
     }
 
     body.dark-mode {
@@ -60,21 +59,19 @@ const GlobalStyles = () => (
       --bg-secondary: #1e1e1e;
       --text-primary: #fffafa;
       --text-secondary: #e0e0e0;
-      --accent-primary: #d4b5ff;
-      --accent-secondary: #b388ff;
-      --nav-text: #ffffff;
+      --accent-primary: #b388ff;
 
       --btn-grey: #323232;
+      --project-link: var(--bg-primary);
 
-      --box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.05),
-        0 4px 8px 0 rgba(255, 255, 255, 0.05),
-        0 8px 16px 0 rgba(255, 255, 255, 0.05);
+      --btn-text-regular: var(--text-primary);
+      --btn-text-inverted: var(--bg-secondary);
     }
 
     main {
       margin: 0 auto;
       color: var(--text-secondary);
-      max-width: var(--page-width);
+      max-width: var(--max-page-width);
       padding: 0 2rem 2rem 2rem;
     }
 
@@ -118,14 +115,14 @@ const GlobalStyles = () => (
     }
 
     a {
-      color: var(--accent-secondary);
+      color: var(--accent-primary);
       text-decoration: none;
       font-size: 1rem;
       border-bottom: 1px solid var(--accent-primary);
     }
 
     a:hover {
-      border-bottom-color: var(--accent-secondary);
+      border-bottom-color: var(--accent-primary);
     }
 
     textarea {
@@ -142,16 +139,10 @@ const GlobalStyles = () => (
       transition:
         border-color 0.2s,
         box-shadow 0.2s;
-      background-color: var(--bg-secondary);
       color: var(--text-secondary);
-    }
-    textarea:focus {
-      outline: none;
-      border-color: var(--accent-secondary);
-      box-shadow: 0 0 0 2px rgba(138, 75, 175, 0.2);
+      background: var(--bg-primary);
     }
     textarea:disabled {
-      background-color: var(--bg-primary);
       color: var(--text-secondary);
     }
   `}</style>

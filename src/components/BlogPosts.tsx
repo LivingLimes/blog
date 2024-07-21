@@ -44,6 +44,11 @@ const BlogPosts = ({ posts }) => {
         .post-title {
           margin: 0;
         }
+        .post-link:hover .post-title {
+          color: var(--accent-primary);
+          text-decoration-line: underline;
+          text-decoration-thickness: 2px;
+        }
         .post-caption {
           margin: 0;
         }

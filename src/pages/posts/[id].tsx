@@ -5,7 +5,9 @@ import { getAllPagesIds, getPagesData } from '@/utils/page'
 export default function Post({ postData }) {
   return (
     <Layout>
-      <h1>{postData.title}</h1>
+      <header>
+        <h1>{postData.title}</h1>
+      </header>
       <article>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>

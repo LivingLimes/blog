@@ -57,7 +57,7 @@ const Navigation = () => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          max-width: var(--page-width);
+          max-width: var(--max-page-width);
           margin: 0 auto;
           padding: 1rem 2rem;
         }
@@ -86,7 +86,7 @@ const Navigation = () => {
           font-weight: bold;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: var(--media-query)) {
           .nav-container {
             padding: 0.5rem 2rem;
           }

@@ -101,8 +101,8 @@ const ProjectLink = ({ href, children }) => (
         border-radius: var(--border-radius-4);
         font-size: 0.875rem;
         text-decoration: none;
-        background-color: var(--accent-secondary);
-        color: var(--bg-primary);
+        background-color: var(--accent-primary);
+        color: var(--project-link);
       }
       .project-link:hover {
         opacity: 0.9;

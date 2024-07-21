@@ -156,7 +156,7 @@ const ProjectsPage: React.FC = () => {
         }
         .user-message-container {
           position: relative;
-          border-left: 4px solid var(--accent-secondary);
+          border-left: 4px solid var(--accent-primary);
         }
         .message-card .message {
           margin: 0;
@@ -171,8 +171,8 @@ const ProjectsPage: React.FC = () => {
           position: absolute;
           top: -9px;
           left: 12px;
-          background-color: var(--accent-secondary);
-          color: var(--bg-secondary);
+          background-color: var(--accent-primary);
+          color: var(--btn-text-inverted);
           border-radius: var(--border-radius-round);
           padding: 2px 8px;
           font-size: 0.75rem;
@@ -182,23 +182,24 @@ const ProjectsPage: React.FC = () => {
           align-items: flex-start;
           gap: 0.5rem;
         }
-        @media (max-width: 768px) {
+        @media (max-width: var(--media-query)) {
           .projects-grid {
             grid-template-columns: 1fr;
           }
         }
         .button {
-          background-color: var(--accent-secondary);
-          color: var(--bg-secondary);
-          border: 1px solid var(--accent-secondary);
+          background-color: var(--accent-primary);
+          color: var(--btn-text-inverted);
+          border: 1px solid var(--accent-primary);
           border-radius: var(--border-radius-4);
           padding: 10px 16px;
           font-size: 0.8rem;
+          cursor: pointer;
         }
         .button:hover:not(:disabled) {
-          color: var(--accent-secondary);
+          color: var(--accent-primary);
           background-color: var(--white);
-          border: 1px solid var(--accent-secondary);
+          border: 1px solid var(--accent-primary);
         }
         .button.clicked {
           transform: scale(0.95);
