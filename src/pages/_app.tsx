@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import React from 'react'
 import ThemeProvider from '@/utils/contexts/ThemeProvider'
 
@@ -6,6 +7,7 @@ export default function App({ Component, pageProps }) {
     <>
       <ThemeProvider>
         <Component {...pageProps} />
+        <Analytics />
       </ThemeProvider>
       <GlobalStyles />
     </>
