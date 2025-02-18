@@ -21,19 +21,9 @@ const HomePage: React.FC = ({ postData }) => {
             internet where I share my work on anything I&#39;m interested in.
           </p>
           <p>
-            These days, most of my time is spent slinging code for{' '}
-            <a
-              href="https://github.com/surrealdb/surrealdb"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              SurrealDB
-            </a>
-            , training my dog and dabbling in the creative arts. In particular,
-            I&#39;ve been enjoying building stuff with lego and improvising cool
-            stories. I&#39;ve also been thinking about how to make the world a
-            kinder place and a place where more people are comfortable to take
-            calculated risks.
+            These days, most of my time is spent building personal projects to
+            learn more deeply about how computers work as well as cooking and
+            baking!
           </p>
         </section>
 
